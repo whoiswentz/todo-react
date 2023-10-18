@@ -1,0 +1,11 @@
+.mainHeader {
+    display: flex;
+    justify-content: center;
+    padding: 5.12rem 0;
+    background-color: var(--gray-700);
+}
+
+.logoContainer {
+    display: flex;
+    gap: 0.62rem;
+}

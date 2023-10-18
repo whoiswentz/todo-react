@@ -1,0 +1,35 @@
+.todoInput {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: -2rem;
+}
+
+.todoInput input {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--gray-500);
+    border-radius: 8px;
+    border: 1px solid var(--gray-700);
+}
+
+.todoInput button[type=submit] {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 0;
+    gap: 0.5rem;
+    color: var(--gray-100);
+    background-color: var(--blue-400);
+    font-weight: 700;
+    font-size: 0.875rem;
+
+    cursor: pointer;
+
+    transition: background-color 0.1s;
+}
+
+.todoInput button[type=submit]:not(:disabled):hover {
+    background-color: var(--blue-300);
+}
