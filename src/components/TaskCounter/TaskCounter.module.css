@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.container span {
+    padding: 0.12rem 0.5rem;
+    background-color: var(--gray-400);
+    border-radius: 50%;
+}
