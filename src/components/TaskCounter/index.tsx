@@ -3,15 +3,16 @@ import styles from './TaskCounter.module.css';
 
 type TaskCounterProps = {
     labelText: string;
-    counter: number;
+    counter: string;
     labelColor?: CSSProperties;
+    spanStyle?: CSSProperties;
 }
 
-export function TaskCounter({ labelText, counter, labelColor }: TaskCounterProps) {
+export function TaskCounter({ labelText, counter, labelColor, spanStyle }: TaskCounterProps) {
     return (
         <div className={styles.container}>
             <h3 style={labelColor}>{labelText}</h3>
-            <span>{ counter }</span>
+            <span style={spanStyle}>{ counter }</span>
         </div>
     )
 }

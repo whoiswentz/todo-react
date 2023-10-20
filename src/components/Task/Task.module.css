@@ -1,0 +1,71 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    border: 1px solid var(--gray-400);
+    border-radius: 8px;
+    background-color: var(--gray-500);
+}
+
+.trashButton {
+    display: flex;
+    align-items: baseline;
+    padding: 0.31rem;
+    border-radius: 8px;
+    border: none;
+    background: none;
+    color: var(--gray-100);
+}
+
+.trashButton:hover {
+    background-color: var(--gray-400);
+    color: var(--red-200);
+}
+
+.textTaskIncomplete, 
+.textTaskComplete {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.textTaskComplete {
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+
+.circleWithoutBackground {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border: 3px solid var(--blue-300);
+    border-radius: 50%;
+    padding: 0.125rem;
+}
+
+.circleWithoutBackground:hover {
+    background-color: var(--blue-400);
+}
+
+.circleWithoutBackground svg {
+    visibility: hidden;
+}
+
+.circleWithCheck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--purple-200);
+    border-radius: 50%;
+    padding: 0.125rem;
+    border: 3px solid var(--purple-200);
+}
+
+.circleWithCheck:hover {
+    background-color: var(--purple-100);
+    border-color: var(--purple-100);
+}

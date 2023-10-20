@@ -11,6 +11,9 @@
     --blue-400: #1E6F9F;
 
     --purple-100: #8284FA;
+    --purple-200: #5E60CE;
+
+    --red-200: #E25858;
 }
 
 * {
@@ -28,7 +31,7 @@ body {
 }
 
 body, input, textarea, button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1rem;
 }

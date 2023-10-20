@@ -6,16 +6,20 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 export type Task = {
     id: string
     description: string
+    completed: boolean
 }
 
 type TaskState = {
-    availableTasks: Task[]
-    completedTasks: Task[]
+    tasks: Task[]
+    total: number
 }
 
 const initialState: TaskState = {
-    availableTasks: [],
-    completedTasks: []
+    tasks: [
+        {id: uuid(), description: "study react", completed: false},
+        {id: uuid(), description: "study rust", completed: true}
+    ],
+    total: 2
 }
 
 export const taskSlice = createSlice({
@@ -24,13 +28,25 @@ export const taskSlice = createSlice({
     reducers: {
         addTask: (state, task: PayloadAction<string>) => {
             const taskUUID = uuid();
-            const newTask = {id: taskUUID, description: task.payload}
-            state.availableTasks = [...state.availableTasks, newTask]
+            const newTask = { id: taskUUID, description: task.payload, completed: false }
+            state.tasks = [...state.tasks, newTask]
+            state.total = state.total + 1
+        },
+        completeTask: (state, action: PayloadAction<string>) => {
+            state.tasks = state.tasks.map(t => {
+                if (t.id == action.payload) {
+                    return { ...t, completed: !t.completed };
+                }
+                return t
+            })
+        },
+        deleteTask: (state, action: PayloadAction<string>) => {
+            state.tasks = state.tasks.filter(t => t.id !== action.payload)
         }
     }
 })
 
 export const taskSelect = (state: RootState) => state.task
 
-export const { addTask } = taskSlice.actions
+export const { addTask, completeTask, deleteTask } = taskSlice.actions
 export default taskSlice.reducer
